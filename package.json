@@ -46,6 +46,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "yarn build && gh-pages --dist public --branch gh-pages"
+    "deploy": "yarn build && gh-pages --dist public --branch master"
   }
 }
