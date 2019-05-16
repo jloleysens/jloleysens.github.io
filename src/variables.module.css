@@ -1,0 +1,43 @@
+/*
+This file is in a bit of a state.
+
+The var names works as follows:
+`--(swatch-name)-(brief-relative-description)?-(shade-nr)`
+
+The swatch name is the overall version/iteration starting at `a` in which
+the color was introduced. The brief description is the role relative to the
+others colors in the swatch. An optional shade nr may follow the brief description
+for different shades of a color.
+*/
+:root {
+  --a-dark: #191308;
+  --a-cold: #003249;
+  --a-dark-warm: #372248;
+  --a-warm: #BA1F33;
+  --a-light: #EAEAEA;
+
+  --a-dark-1: #171208;
+  --a-cold-1: #002E43;
+  --a-dark-warm-1: #321F42;
+  --a-warm-1: #AA1D2F;
+  --a-light-1: #D5D5D5;
+
+  --b-dark: #11001C;
+  --b-dark-warm: #270722;
+  --b-cold: #4F6367;
+  --b-green: #498467;
+  --b-light: #98B6B1;
+
+  --c-dark: #070707;
+  --c-dark-cold-2: #0D1F2D;
+  --c-dark-cold-1: #084C61;
+  --c-dark-cold-grey: #413F54;
+  --c-cool: #177E89;
+  --c-dark-neutral: #362417;
+  --c-dark-warmer: #321325;
+  --c-warm: #A50104;
+  --c-neutral: #849483;
+  --c-warning: #FCBA04;
+  --c-light-1: #D9DBF1;
+  --c-light: #F7F7FF;
+}
