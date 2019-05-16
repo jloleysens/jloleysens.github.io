@@ -9,7 +9,6 @@ const AppContext = React.createContext<{
 
 export function AppContextProvider({ children }: any) {
   const [mode, setMode] = React.useState<Modes>('LIGHT');
-  console.log('theme', getColorTheme(mode));
   return (
     <ThemeProvider theme={getColorTheme(mode)}>
       <AppContext.Provider

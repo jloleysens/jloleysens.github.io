@@ -3,19 +3,13 @@ const {
   createFilePath
 } = require(`gatsby-source-filesystem`)
 
-exports.createPages = ({
-  graphql,
-  actions
-}) => {
-  const {
-    createPage
-  } = actions
-
+function categoryBlogCreator(category, graphql, createPage) {
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
   return graphql(
     `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "//${category}//" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -55,8 +49,22 @@ exports.createPages = ({
       })
     })
 
-    return null
+    return null;
   })
+}
+
+exports.createPages = ({
+  graphql,
+  actions
+}) => {
+  const {
+    createPage
+  } = actions
+
+  return Promise.all([
+    categoryBlogCreator('code', graphql, createPage),
+    categoryBlogCreator('music', graphql, createPage),
+  ])
 }
 
 exports.onCreateNode = ({
