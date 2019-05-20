@@ -64,7 +64,7 @@ exports.createPages = ({
   return Promise.all([
     categoryBlogCreator('code', graphql, createPage),
     categoryBlogCreator('music', graphql, createPage),
-  ])
+  ]);
 }
 
 exports.onCreateNode = ({

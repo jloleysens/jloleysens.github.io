@@ -2,7 +2,8 @@ import React from 'react';
 import 'typeface-fira-mono';
 import 'typeface-fira-sans';
 import 'prismjs/themes/prism-solarizedlight.css';
-import './src/variables.module.css'
+import './src/variables.css'
+import './src/global.css'
 import {
   AppContextProvider
 } from './src/context/AppContext';
@@ -10,5 +11,7 @@ import {
 export function wrapRootElement({
   element
 }) {
-  return <AppContextProvider>{ element }</AppContextProvider>;
+  return <AppContextProvider > {
+    element
+  } < /AppContextProvider>;
 }

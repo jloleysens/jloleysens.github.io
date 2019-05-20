@@ -26,12 +26,10 @@ function BlogPostTemplate(props: any) {
       >
         {post.frontmatter.date}
       </p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      {/* <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      /> */}
+      <div
+        style={{ ...scale(-1 / 4), textAlign: 'justify' }}
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
       <ul
         style={{
           display: `flex`,
