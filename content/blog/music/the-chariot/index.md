@@ -1,5 +1,5 @@
 ---
-title: On The Chariot, briefly
+title: On The Chariot
 date: '2019-05-19T13:50:43.329Z'
 ---
 

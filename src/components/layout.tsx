@@ -1,11 +1,14 @@
+// TODO: Move this to another directory called 'containers'
+
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import Image from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm, scale } from '../utils/typography';
 import Bio from '../components/bio';
+import { useThemeSetup } from '../hooks/use-theme-setup';
 
 const HeaderContainer: any = styled.header`
   padding-top: ${() => rhythm(1.5)};
@@ -123,8 +126,8 @@ function SmallHeading() {
   );
 }
 
-function Layout(props: any) {
-  const { location, children } = props;
+function Layout({ location, children }: any) {
+  const themeContext = React.useContext(ThemeContext);
   const rootPath = `${__PATH_PREFIX__}/`;
   const data = useStaticQuery(
     graphql`
@@ -146,6 +149,9 @@ function Layout(props: any) {
   );
   const { author } = data.site.siteMetadata;
   const isRootPath = location.pathname === rootPath;
+
+  useThemeSetup(themeContext);
+
   return (
     <div>
       <HeaderContainer isRootPath={isRootPath}>
@@ -157,6 +163,7 @@ function Layout(props: any) {
         {children}
         <hr
           style={{
+            marginTop: rhythm(0.5),
             marginBottom: rhythm(1),
           }}
         />
