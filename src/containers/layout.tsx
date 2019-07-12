@@ -69,7 +69,7 @@ function SmallHeading() {
   );
 }
 
-function Layout({ location, children }: any) {
+function Layout({ location, children, back }: any) {
   const themeContext = React.useContext(ThemeContext);
   const rootPath = `${__PATH_PREFIX__}/`;
   const data = useStaticQuery(
@@ -103,6 +103,17 @@ function Layout({ location, children }: any) {
           : SmallHeading()}
       </components.HeaderContainer>
       <components.MainContainer>
+        {back ? (
+          <Link
+            style={{
+              fontSize: rhythm(1.5),
+              position: 'fixed',
+              top: '120px',
+              transform: 'translateX(-100px)',
+            }}
+            to={back}
+          >{`<`}</Link>
+        ) : null}
         {children}
         <hr
           style={{

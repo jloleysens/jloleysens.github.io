@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, navigateTo } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../containers/seo';
 import { rhythm, scale } from '../utils/typography';
@@ -7,10 +7,10 @@ import { rhythm, scale } from '../utils/typography';
 function BlogPostTemplate(props: any) {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next } = props.pageContext;
+  const { previous, next, category } = props.pageContext;
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout back={category} location={props.location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

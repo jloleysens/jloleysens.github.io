@@ -42,6 +42,7 @@ function categoryBlogCreator(category, graphql, createPage) {
         path: post.node.fields.slug,
         component: blogPost,
         context: {
+          category,
           slug: post.node.fields.slug,
           previous,
           next,
