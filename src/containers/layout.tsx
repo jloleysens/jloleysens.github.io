@@ -7,71 +7,14 @@ import Image from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm, scale } from '../utils/typography';
-import Bio from '../components/bio';
+import Bio from '../containers/bio';
 import { useThemeSetup } from '../hooks/use-theme-setup';
-
-const HeaderContainer: any = styled.header`
-  padding-top: ${() => rhythm(1.5)};
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid grey;
-  height: ${(props: any) => (props.isRootPath ? rhythm(6) : rhythm(3))};
-  justify-content: center;
-  padding-top: ${(props: any) =>
-    props.isRootPath ? rhythm(1.5) : rhythm(0.5)};
-  background: ${props =>
-    `linear-gradient(45deg, var(--a-dark), var(--c-dark-cold-grey), var(--a-cold), var(--a-light))`};
-  background-size: 400% 400%;
-  animation: Gradient 50s ease infinite;
-
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  align-self: center;
-  text-align: center;
-  margin-bottom: 0;
-  transform: ${() => `translate(0, ${rhythm(0.5)})`};
-`;
-
-const StyledH1 = styled.h1`
-  display: flex;
-  align-self: center;
-  margin-bottom: 0;
-  margin-top: 0;
-  color: ${props => props.theme.lightText};
-`;
-
-const StyledSmall3 = styled.h3`
-  display: flex;
-  align-self: center;
-  margin-left: ${() => rhythm(0.5)};
-  margin-top: 0;
-  color: ${props => props.theme.lightText};
-`;
-
-const StyledMain = styled.main`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${() => rhythm(24)};
-  padding: ${() => `${rhythm(1.5)} ${rhythm(3 / 4)}`};
-`;
+import * as components from '../components/typo';
 
 function MainHeading({ author, image }: { author: string; image: any }) {
   return (
     <>
-      <StyledH1
+      <components.BigHeading
         style={{
           ...scale(1.5),
         }}
@@ -88,8 +31,8 @@ function MainHeading({ author, image }: { author: string; image: any }) {
           {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
           {'O'}
         </Link>
-      </StyledH1>
-      <ImageContainer>
+      </components.BigHeading>
+      <components.ImageContainer>
         <Image
           fixed={image}
           alt={author}
@@ -102,14 +45,14 @@ function MainHeading({ author, image }: { author: string; image: any }) {
             borderRadius: `50%`,
           }}
         />
-      </ImageContainer>
+      </components.ImageContainer>
     </>
   );
 }
 
 function SmallHeading() {
   return (
-    <StyledSmall3>
+    <components.SmallHeading>
       <Link
         style={{
           boxShadow: `none`,
@@ -122,7 +65,7 @@ function SmallHeading() {
         {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
         {'O'}
       </Link>
-    </StyledSmall3>
+    </components.SmallHeading>
   );
 }
 
@@ -154,12 +97,12 @@ function Layout({ location, children }: any) {
 
   return (
     <div>
-      <HeaderContainer isRootPath={isRootPath}>
+      <components.HeaderContainer isRootPath={isRootPath}>
         {isRootPath
           ? MainHeading({ author, image: data.avatar.childImageSharp.fixed })
           : SmallHeading()}
-      </HeaderContainer>
-      <StyledMain>
+      </components.HeaderContainer>
+      <components.MainContainer>
         {children}
         <hr
           style={{
@@ -168,7 +111,7 @@ function Layout({ location, children }: any) {
           }}
         />
         <Bio />{' '}
-      </StyledMain>
+      </components.MainContainer>
     </div>
   );
 }

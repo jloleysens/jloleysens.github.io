@@ -3,13 +3,15 @@ import * as React from 'react';
 
 export function useThemeSetup(theme: Theme) {
   React.useEffect(() => {
-    console.log('installing global style element');
     let styleEl: HTMLStyleElement = document.querySelector('#managed-style');
+
     if (!styleEl) {
       styleEl = document.createElement('style');
       styleEl.setAttribute('id', 'managed-style');
+    } else {
+      styleEl.remove();
     }
-    styleEl.remove();
+
     styleEl.innerHTML = `
       body {
         background-color: ${theme.background};
@@ -26,6 +28,7 @@ export function useThemeSetup(theme: Theme) {
         transition: color 0.2s ease-in-out;
       }
     `;
+
     document.head.appendChild(styleEl);
   }, [theme]);
 }
