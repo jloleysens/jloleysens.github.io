@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql, navigateTo } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../containers/seo';
 import { rhythm, scale } from '../utils/typography';
