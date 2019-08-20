@@ -76,14 +76,10 @@ motivation to consequent action.
 One gets the sense that this of music seeks to undo the confidence with which
 humankind establishes and venerates it's ideologies as superior and correct -
 to me this is particularly true of the West's cultural pattern. _The Chariot_'s
-music attempts to warn against the dangers of oversimplification and occasionally
-depicts humanity grasping at straws, endlessly seeking for unifying theories
+music warns against the dangers of oversimplification and tends to
+depict humanity grasping at straws, endlessly seeking for unifying theories
 but only discovering paradox leading to deepening anxieties, unless we can
-somehow awaken to our place in the world. _The Chariot_'s music says the
-following is solid ground: between the tireless categorization and
-compartmentalization that has served advancements in how we, as humans,
-organize ourselves and technology and the acknowledgement that we actually
-have no idea what we are doing.
+somehow awaken to our place in the world (whatever that may be).
 
 ### Notes
 1. I have seen exceptions to this rule, individuals with whom The Chariot resonate off the bat. Emphasis here on _exception_.
