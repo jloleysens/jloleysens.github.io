@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Elastic Logo</title>
+  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+  <style>
+    html body {
+      height: 100vh;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas height="400" width="400" class="zdog"></canvas>
+  <script>
+    const YELLOW = '#f3d337'
+    ,     GREEN = '#a0c443'
+    ,     PINK = '#d7689d'
+    ,     TURQUOISE = '#66b5ae'
+    ,     BLUE = '#5da4dc'
+    ,     DARK_BLUE = '#40769e'
+    ;
+
+    (function run() {
+      const {
+        Illustration,
+        Shape,
+        Ellipse,
+      } = Zdog;
+
+      const illo = new Illustration({
+        element: '.zdog',
+        dragRotate: true,
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 45,
+        color: GREEN,
+        fill: true,
+        translate: { x: 25, y: 35, z: -135 }
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 45,
+        color: PINK,
+        fill: true,
+        translate: { x: -20, y: -50, z: -135 }
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 60,
+        color: DARK_BLUE,
+        fill: true,
+        translate: { x: 45, y: 10, z: -90 }
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 60,
+        color: BLUE,
+        fill: true,
+        translate: { x: -35, y: -20, z: -90 }
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 80,
+        color: TURQUOISE,
+        fill: true,
+        translate: { x: -15, y: 20, z: -45 }
+      });
+
+      new Shape({
+        addTo: illo,
+        stroke: 80,
+        color: YELLOW,
+        fill: true,
+        translate: { x: 20, y: -30 }
+      });
+
+      const animate = () => {
+        illo.updateRenderGraph();
+        window.requestAnimationFrame(animate);
+      }
+      animate();
+    }())
+
+  </script>
+</body>
+</html>
