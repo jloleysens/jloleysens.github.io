@@ -33,21 +33,22 @@ export const ImageContainer = styled.div`
   align-self: center;
   text-align: center;
   margin-bottom: 0;
-  transform: ${() => `translate(0, ${rhythm(0.5)})`};
+  transform: ${() => `translate(0, ${rhythm(1.5)})`};
 `;
 
-export const BigHeading = styled.h1`
-  display: flex;
-  align-self: center;
-  margin-bottom: 0;
-  margin-top: 0;
-  color: ${props => props.theme.lightText};
-`;
+// export const BigHeading = styled.h1`
+//   display: flex;
+//   align-self: center;
+//   margin-bottom: 0;
+//   margin-top: 0;
+//   color: ${props => props.theme.lightText};
+// `;
 
 export const SmallHeading = styled.h3`
   display: flex;
   align-self: center;
   margin-left: ${() => rhythm(0.5)};
+  margin-right: ${() => rhythm(0.5)};
   margin-top: 0;
   color: ${props => props.theme.lightText};
 `;

@@ -14,24 +14,13 @@ import * as components from '../components/typo';
 function MainHeading({ author, image }: { author: string; image: any }) {
   return (
     <>
-      <components.BigHeading
-        style={{
-          ...scale(1.5),
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
+      <h1 style={{ display: 'flex', alignSelf: 'center', marginBottom: 0, marginTop: 0, }} >
+        <Link style={{ color: 'var(--a-light)', }} to={`/`}>
           {'J'}
           {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
           {'O'}
         </Link>
-      </components.BigHeading>
+      </h1>
       <components.ImageContainer>
         <Image
           fixed={image}
