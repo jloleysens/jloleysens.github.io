@@ -111,7 +111,7 @@ function Layout({ location, children, back }: any) {
               top: '120px',
               transform: 'translateX(-100px)',
             }}
-            to={back}
+            to={`/${back}`}
           >{`<`}</Link>
         ) : null}
         {children}

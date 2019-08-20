@@ -25,8 +25,8 @@ function Index(props: any) {
       />
       {'<'}
       {[
-        { name: 'Programming', slug: 'code' },
-        { name: 'Music', slug: 'music' },
+        { name: 'Programming', slug: '/code' },
+        { name: 'Music', slug: '/music' },
       ].map(thing => {
         return (
           <h3

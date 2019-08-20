@@ -30,6 +30,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-static-folders',
+      options: {
+        folders: [
+          './content/assets/htmls',
+        ]
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [{
