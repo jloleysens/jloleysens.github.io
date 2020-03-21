@@ -1,11 +1,12 @@
 ---
 title: Errors
+date: '2020-03-21T13:40:10.636Z'
 ---
 
 <br/>
 
 Program errors are intended to express unexpected events during the carrying out of a set of instructions.
-An _unexpected event_ may sound like a rare special occurrence that requires extraordinary measures, but
+An _unexpected event_ may sound like a rare, special occurrence that requires extraordinary measures, but
 in programming errors are far from rare and, as I hope to argue, should also be as far from special
 as possible.
 
