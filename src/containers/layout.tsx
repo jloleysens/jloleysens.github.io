@@ -9,13 +9,20 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { rhythm, scale } from '../utils/typography';
 import Bio from '../containers/bio';
 import { useThemeSetup } from '../hooks/use-theme-setup';
-import * as components from '../components/typo';
+import * as components from '../components/typographical';
 
 function MainHeading({ author, image }: { author: string; image: any }) {
   return (
     <>
-      <h1 style={{ display: 'flex', alignSelf: 'center', marginBottom: 0, marginTop: 0, }} >
-        <Link style={{ color: 'var(--a-light)', }} to={`/`}>
+      <h1
+        style={{
+          display: 'flex',
+          alignSelf: 'center',
+          marginBottom: 0,
+          marginTop: 0,
+        }}
+      >
+        <Link style={{ color: 'var(--a-light)' }} to={`/`}>
           {'J'}
           {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
           {'O'}
@@ -41,7 +48,16 @@ function MainHeading({ author, image }: { author: string; image: any }) {
 
 function SmallHeading() {
   return (
-    <components.SmallHeading>
+    <h3
+      style={{
+        display: 'flex',
+        alignSelf: 'center',
+        marginLeft: rhythm(0.5),
+        marginRight: rhythm(0.5),
+        marginTop: 0,
+        color: 'var(--a-light)',
+      }}
+    >
       <Link
         style={{
           boxShadow: `none`,
@@ -54,7 +70,7 @@ function SmallHeading() {
         {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
         {'O'}
       </Link>
-    </components.SmallHeading>
+    </h3>
   );
 }
 
