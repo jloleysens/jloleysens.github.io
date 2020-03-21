@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import Image from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import Bio from '../containers/bio';
 import { useThemeSetup } from '../hooks/use-theme-setup';
 import * as components from '../components/typographical';

@@ -10,22 +10,8 @@ export const HeaderContainer: any = styled.header`
   justify-content: center;
   padding-top: ${(props: any) =>
     props.isRootPath ? rhythm(1.5) : rhythm(0.5)};
-  background: ${props =>
-    `linear-gradient(45deg, var(--a-dark), var(--c-dark-cold-grey), var(--a-cold), var(--a-light))`};
-  background-size: 400% 400%;
-  animation: Gradient 50s ease infinite;
-
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  background: ${() =>
+    `linear-gradient(45deg, var(--a-dark), var(--c-dark-cold-grey), var(--a-cold))`};
 `;
 
 export const ImageContainer = styled.div`
