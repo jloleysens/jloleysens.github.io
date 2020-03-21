@@ -2,7 +2,7 @@
   "name": "jlo",
   "private": true,
   "description": "JLO's blog",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Jean-Louis Leysens <jloleysens@gmail.com>",
   "dependencies": {
     "gatsby": "2.4.3",
