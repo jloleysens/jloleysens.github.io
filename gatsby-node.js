@@ -1,10 +1,8 @@
-const path = require(`path`)
-const {
-  createFilePath
-} = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 function categoryBlogCreator(category, graphql, createPage) {
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
   return graphql(
     `
       {
@@ -28,15 +26,16 @@ function categoryBlogCreator(category, graphql, createPage) {
     `
   ).then(result => {
     if (result.errors) {
-      throw result.errors
+      throw result.errors;
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
 
       createPage({
         path: post.node.fields.slug,
@@ -47,45 +46,34 @@ function categoryBlogCreator(category, graphql, createPage) {
           previous,
           next,
         },
-      })
-    })
+      });
+    });
 
     return null;
-  })
+  });
 }
 
-exports.createPages = ({
-  graphql,
-  actions
-}) => {
-  const {
-    createPage
-  } = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return Promise.all([
     categoryBlogCreator('code', graphql, createPage),
     categoryBlogCreator('music', graphql, createPage),
   ]);
-}
+};
 
-exports.onCreateNode = ({
-  node,
-  actions,
-  getNode
-}) => {
-  const {
-    createNodeField
-  } = actions
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({
       node,
-      getNode
-    })
+      getNode,
+    });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};

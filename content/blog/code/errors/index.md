@@ -18,8 +18,8 @@ the field of hardware and software have enable programmers to combine over hundr
 lower level instructions. We have created and _layered_ concepts over _patterns_ which has lead to an onion-like model
 of layers upon layers. This pattern itself is called _abstraction_ and is a very powerful idea in Computer Science.
 Travelling up from the lowest layer of the onion we arrive at the text we read and write. Let's call this
-the _text representation_ of our program. It is one description of the program, and it happens to the be
-one that programmers interact with the most, so also where our creative problem solving efforts are
+the _text representation_ of our program. It is one description of the program, and it happens to be the
+one that programmers interact with most, so also where our creative problem solving efforts are
 implemented for the problem we are (hopefully) solving.
 
 Where does this leave errors? Sometimes wedged between the edges of the layers of abstraction -- a message
@@ -114,9 +114,12 @@ event. Consider this alteration:
 
 ```javascript
 // Simple, generic error management machinery
-const SPECIFIC_ERROR = 'SPECIFIC_ERROR';
-const errorCreator = code => () => new Error(code);
-const createSpecificError = errorCreator(SPECIFIC_ERROR);
+const I_TRIED_THAT_B_THING_AGAIN_ERROR = 'I_TRIED_THAT_B_THING_AGAIN_ERROR';
+const errorCreatorFactory = code => (/* Here we could add more error data */) =>
+  new Error(code);
+const createSpecificError = errorCreatorFactory(
+  I_TRIED_THAT_BE_THING_AGAIN_ERROR
+);
 
 try {
   let a = 1;
@@ -134,7 +137,7 @@ try {
 We are still using an `instanceof` check in combination with information we think is useful for other humans
 that may trigger this case. This gives us economy in the machinery we use, we only need to document very
 specific, unique error codes and we are much closer to building a system of error handling that can generate
-more helpful information. But we can do better still -- I intend to discuss `Either`<sup>5</sup> in a following
+more helpful information. But we can do better still -- I intend to discuss `Either`<sup>4</sup> in a following
 post.
 
 To conclude, The best possible scenario I could imagine is one in which lower level errors are all handled and converted
@@ -150,9 +153,9 @@ error states you may not be able to conceive of given current information.
    happening, if any layer below is unreliable, we are unreliable.
 2. For instance [Out of the Tarpit](http://curtclifton.net/papers/MoseleyMarks06a.pdf) is a fantastic article
    on the pitfalls of carelessly managing state.
-3. Other, compiled languages, would never have generated a program that would allow an error like this, but
+3. Other, compiled, languages would never have generated a program that would allow an error like this, but
    I am putting this consideration aside because they can still allow analogous errors to occur; albeit
    hidden amidst a lot more text usually.
-4. Consider checking out [fp-ts](https://gcanti.github.io/fp-ts/) very cool TypeScript implementations of common abstract data structures.
+4. Consider checking out [fp-ts](https://gcanti.github.io/fp-ts/) -- very cool TypeScript implementations of common abstract data structures.
 5. Monads are one response to forcing us to engage with the possibility that many parts of our program can
    create "unexpected" results.
