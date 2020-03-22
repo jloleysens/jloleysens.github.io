@@ -8,7 +8,8 @@ module.exports = {
       twitter: `JLo616`,
     },
   },
-  plugins: [{
+  plugins: [
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog/code`,
@@ -32,15 +33,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-static-folders',
       options: {
-        folders: [
-          './content/assets/htmls',
-        ]
-      }
+        folders: ['./content/assets'],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [{
+        plugins: [
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -55,8 +55,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              showLineNumbers: true
-            }
+              showLineNumbers: true,
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -94,4 +94,4 @@ module.exports = {
       },
     },
   ],
-}
+};
