@@ -1,0 +1,9 @@
+.my-figure *> img {
+  margin-bottom: 0;
+}
+
+.my-figure > figcaption {
+  text-align: center;
+  font-style: italic;
+  font-weight: light;
+}
