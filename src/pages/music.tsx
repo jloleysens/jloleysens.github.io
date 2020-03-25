@@ -14,22 +14,14 @@ function Music(props: any) {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Music Blog"
-        keywords={[
-          `blog`,
-          `javascript`,
-          `music`,
-          `punk`,
-          `post-metal`,
-          `typescript`,
-          `functional programming`,
-        ]}
+        keywords={['blog', 'music', 'punk', 'post-metal', 'metal']}
       />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <div key={node.fields.slug}>
             <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                 {title}
               </Link>
             </h3>

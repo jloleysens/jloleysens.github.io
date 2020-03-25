@@ -20,7 +20,7 @@ function Bio() {
         return (
           <div
             style={{
-              display: `flex`,
+              display: 'flex',
               marginBottom: rhythm(2.5),
             }}
           >

@@ -19,7 +19,7 @@ function BlogPostTemplate(props: any) {
       <p
         style={{
           ...scale(-1 / 5),
-          display: `block`,
+          display: 'block',
           marginBottom: rhythm(1),
           marginTop: rhythm(-1),
         }}
@@ -32,10 +32,10 @@ function BlogPostTemplate(props: any) {
       />
       <ul
         style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          listStyle: 'none',
           padding: 0,
         }}
       >

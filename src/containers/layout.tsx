@@ -22,7 +22,7 @@ function MainHeading({ author, image }: { author: string; image: any }) {
           marginTop: 0,
         }}
       >
-        <Link style={{ color: 'var(--a-light)' }} to={`/`}>
+        <Link style={{ color: 'var(--a-light)' }} to={'/'}>
           {'J'}
           {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
           {'O'}
@@ -35,10 +35,10 @@ function MainHeading({ author, image }: { author: string; image: any }) {
           style={{
             width: 75,
             height: 75,
-            borderRadius: `100%`,
+            borderRadius: '100%',
           }}
           imgStyle={{
-            borderRadius: `50%`,
+            borderRadius: '50%',
           }}
         />
       </components.ImageContainer>
@@ -60,11 +60,11 @@ function SmallHeading() {
     >
       <Link
         style={{
-          boxShadow: `none`,
-          textDecoration: `none`,
-          color: `inherit`,
+          boxShadow: 'none',
+          textDecoration: 'none',
+          color: 'inherit',
         }}
-        to={`/`}
+        to={'/'}
       >
         {'J'}
         {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
@@ -117,7 +117,9 @@ function Layout({ location, children, back }: any) {
               transform: 'translateX(-100px)',
             }}
             to={`/${back}`}
-          >{`<`}</Link>
+          >
+            {'<'}
+          </Link>
         ) : null}
         {children}
         <hr

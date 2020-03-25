@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Jean-Louis Leysens <jloleysens@gmail.com>",
   "dependencies": {
+    "fp-ts": "^2.5.3",
     "gatsby": "2.4.3",
     "gatsby-image": "2.0.41",
     "gatsby-plugin-feed": "2.2.0",
@@ -41,7 +42,9 @@
     "@types/ramda": "0.26.8",
     "@types/styled-components": "4.1.14",
     "gh-pages": "2.0.1",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "ts-node": "8.8.1",
+    "typescript": "3.8.3"
   },
   "license": "MIT",
   "main": "n/a",

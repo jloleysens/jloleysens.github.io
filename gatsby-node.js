@@ -1,8 +1,8 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 function categoryBlogCreator(category, graphql, createPage) {
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
+  const BlogPost = path.resolve('./src/templates/blog-post.tsx');
   return graphql(
     `
       {
@@ -37,12 +37,14 @@ function categoryBlogCreator(category, graphql, createPage) {
         index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
 
+      const slug = post.node.fields.slug;
+
       createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
+        path: slug,
+        component: BlogPost,
         context: {
           category,
-          slug: post.node.fields.slug,
+          slug,
           previous,
           next,
         },
@@ -65,13 +67,20 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({
+  if (node.internal.type === 'MarkdownRemark') {
+    const maybePathTailSection = createFilePath({
       node,
       getNode,
     });
+
+    const value = node.fileAbsolutePath.includes('/code/')
+      ? `/code${maybePathTailSection}`
+      : node.fileAbsolutePath.includes('/music/')
+      ? `/music${maybePathTailSection}`
+      : maybePathTailSection;
+
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     });

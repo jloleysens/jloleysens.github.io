@@ -14,13 +14,13 @@ function Index(props: any) {
       <SEO
         title="Home"
         keywords={[
-          `blog`,
-          `javascript`,
-          `music`,
-          `punk`,
-          `post-metal`,
-          `typescript`,
-          `functional programming`,
+          'blog',
+          'javascript',
+          'music',
+          'punk',
+          'post-metal',
+          'typescript',
+          'functional programming',
         ]}
       />
       {'<'}
@@ -33,7 +33,7 @@ function Index(props: any) {
             key={thing.name}
             style={{ margin: `${rhythm(1)} 0 ${rhythm(1)} ${rhythm(1)}` }}
           >
-            <Link style={{ boxShadow: `none` }} to={thing.slug}>
+            <Link style={{ boxShadow: 'none' }} to={thing.slug}>
               {thing.name}
             </Link>
           </h3>
