@@ -1,5 +1,6 @@
 ---
 title: Errors and Either
+date: '2020-03-25T17:52:07.528Z'
 ---
 
 <br />
