@@ -10,7 +10,9 @@ kidding. I do not intend to use this post as an introduction to
 Monads<sup>1</sup>. This post is actually a continuation of [my post on
 errors](../errors), and I would like to dig into the practical upshots of
 implementing more thorough and efficient means of handling errors.
-Specifically I am picking up the sentiment that _we can do better_.
+Specifically I am picking up the sentiment that _we can do better_. Using
+`Either` is one version of doing better that I'd like to consider in this
+post.
 
 Consider the following diagram:
 
