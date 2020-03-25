@@ -118,7 +118,7 @@ const I_TRIED_THAT_B_THING_AGAIN_ERROR = 'I_TRIED_THAT_B_THING_AGAIN_ERROR';
 const errorCreatorFactory = code => (/* Here we could add more error data */) =>
   new Error(code);
 const createSpecificError = errorCreatorFactory(
-  I_TRIED_THAT_BE_THING_AGAIN_ERROR
+  I_TRIED_THAT_B_THING_AGAIN_ERROR
 );
 
 try {
