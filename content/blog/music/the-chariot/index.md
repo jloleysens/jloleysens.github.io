@@ -59,7 +59,7 @@ aphorisms: "We're all capable of love, we're all capable of cancer" and
 "Love."'s (one of all my all time favorites) lyrics "You fell in love [with the world], you fell
 asleep". These lines reveal a theme: a reclamation of what was lost and
 supremacy of individual decision-making while affirming the accompanying responsibility that come
-with our decision-making powers -- all delivered in a tongue-and-cheek manner.
+with our decision-making powers -- all delivered in a tongue-in-cheek manner.
 
 The band's primary driver and creative force Josh Scogin went through several
 line up changes. He nurtured and maintained the band's vision. Scogin is a
@@ -82,5 +82,6 @@ but only discovering paradox leading to deepening anxieties, unless we can
 somehow awaken to our place in the world (whatever that may be).
 
 ### Notes
+
 1. I have seen exceptions to this rule, individuals with whom The Chariot resonate off the bat. Emphasis here on _exception_.
 2. The music video for "Daggers" may contain the first [instance of dabbing](https://www.youtube.com/watch?v=K05weZYExPU&start=75).
