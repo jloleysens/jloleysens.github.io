@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 25 Mar 2020 18:28:45 GMT</lastBuildDate><item><title><![CDATA[Errors and Either]]></title><description><![CDATA[Welcome to yet another post on the Internet about Monads! I am only mostly
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 10 Apr 2020 12:39:22 GMT</lastBuildDate><item><title><![CDATA[On The Dillinger Escape Plan]]></title><description><![CDATA[The Dillinger Escape Plan (TDEP) are a special group, and I would like to
+talk about why. I have probably listened to roughly 80% of their…]]></description><link>https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</link><guid isPermaLink="false">https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</guid><pubDate>Fri, 10 Apr 2020 12:38:13 GMT</pubDate><content:encoded>&lt;p&gt;The Dillinger Escape Plan (TDEP) are a special group, and I would like to
+talk about why. I have probably listened to roughly 80% of their discography
+and I was enraptured by their unique style that sought to undo many of the
+comforts we have in conventional song-writing and musicianship.&lt;/p&gt;
+&lt;p&gt;Some years ago I was playing a video game called Bioshock in which you — the
+protagonist — crash land in the middle of the ocean in the opening chapter.
+The cause of your misfortune is not disclosed. The still floating, burning
+wreckage that was your plane is slowly sinking and so you are encouraged to
+alight. Into the nebulous ocean waters.&lt;/p&gt;
+&lt;p&gt;Fortunately a tower in the middle of the ocean is within swimming distance,
+it is your only hope for survival. After dragging your apparently capable
+self out of the ocean waters you enter the base of the tower. A banner
+reading “No gods or kings. Only man.” greets you. From here things get pretty
+crazy. An elevator takes you to an undersea city where the brightest
+scientific minds have created a safe haven for pushing the limits of what
+humanity can achieve. Unfettered by scruples, all fronts of scientific
+advancement have been pushed to dizzying heights. Humans have been augmented.
+They can run faster, they are much stronger and they can shoot fire from
+their finger-tips (because why not!?). Sub-human creatures act as enforcers
+of an unspoken law. However, all is not well in Rapture.&lt;/p&gt;
+&lt;p&gt;Greed and narcissism have won out over nobler pursuits. Self-improvement and
+self-glorification have enticed inhabitants of Rapture to set totalitarian
+goals leaving many scraping the bottom of the barrel. Medicaments that
+augment abilities are also highly addictive which fostered a group insanity
+within the populace. Their dignity stripped as well as their pockets. This is
+where you enter.&lt;/p&gt;
+&lt;p&gt;Cue the track “Fix your face” from TDEPs album “Ire Works”&lt;sup&gt;1&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Delving deeper still into the mysteries of Rapture I continued to listen to
+TDEP. A better musical match for the peculiar horrors in this underworld is a
+tall order. Like the denizens of rapture, TDEP is truly manic and
+schizophrenic. Their track “Lurch”, a song about a stalker reflecting on the
+object of his desire is as creepy as it is frantic - “…your picture in my pocket I’m obsessed
+with you”.&lt;/p&gt;
+&lt;p&gt;Amidst this swirling chaos there are songs that are truly moments of quiet
+clarity. None more so than, to my mind, the title track from “Dissociation”.
+Tracks like these invite a more reflective and personal mode, albeit
+remaining true to the off-kilter sound TDEP work tirelessly to reproduce. A
+combination of two drum tracks in the chorus drawing in and out of the left
+and right sides of the stereo image create a sense of being in two states
+simultaneously. Two-minds. Indecision. Ambiguity. Two narratives, not
+intended to co-exist but somehow co-existing regardless. I have not heard a
+better musical representation of these concepts which speaks to the maturity
+TDEP achieved later in the bands career.&lt;/p&gt;
+&lt;p&gt;From a sound perspective, TDEP have opted for more barky, rock-sounding
+guitars - with blazingly high gain to be sure. They are not a &lt;em&gt;metal band&lt;/em&gt; but
+they are also not quite, only a &lt;em&gt;hardcore band&lt;/em&gt;. They have created a specific
+sound. All of these reasons are why TDEP are special and have become an
+irreplaceable part of the kind of music I have come to love.&lt;/p&gt;
+&lt;p&gt;I leave you with a final recommendation to listen to the track “When Good
+Dogs Do Bad Things” from “irony is a dead scene”. It is one of my personal
+favorites and an uncharacteristically long song for TDEP. It showcases their
+dynamism while staying true to the narrative they would go on to develop.&lt;/p&gt;
+&lt;p&gt;R.I.P. TDEP.&lt;/p&gt;
+&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;How is this from 2007?&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Errors and Either]]></title><description><![CDATA[Welcome to yet another post on the Internet about Monads! I am only mostly
 kidding. I do not intend to use this post as an introduction to…]]></description><link>https://jloleysens.github.io//code/either/</link><guid isPermaLink="false">https://jloleysens.github.io//code/either/</guid><pubDate>Wed, 25 Mar 2020 17:52:07 GMT</pubDate><content:encoded>&lt;br /&gt;
 &lt;p&gt;Welcome to yet another post on the Internet about Monads! I am only mostly
 kidding. I do not intend to use this post as an introduction to
@@ -473,7 +530,7 @@ aphorisms: “We’re all capable of love, we’re all capable of cancer” and
 “Love.“‘s (one of all my all time favorites) lyrics “You fell in love [with the world], you fell
 asleep”. These lines reveal a theme: a reclamation of what was lost and
 supremacy of individual decision-making while affirming the accompanying responsibility that come
-with our decision-making powers — all delivered in a tongue-and-cheek manner.&lt;/p&gt;
+with our decision-making powers — all delivered in a tongue-in-cheek manner.&lt;/p&gt;
 &lt;p&gt;The band’s primary driver and creative force Josh Scogin went through several
 line up changes. He nurtured and maintained the band’s vision. Scogin is a
 self-proclaimed adherent to the Christian faith and his lyrics contain many
