@@ -1,6 +1,6 @@
 ---
 title: On The Dillinger Escape Plan
-date: '2019-05-19T13:50:43.329Z'
+date: '2020-04-10T12:38:13.063Z'
 ---
 
 The Dillinger Escape Plan (TDEP) are a special group, and I would like to
