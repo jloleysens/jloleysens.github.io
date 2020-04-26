@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 10 Apr 2020 12:39:22 GMT</lastBuildDate><item><title><![CDATA[On The Dillinger Escape Plan]]></title><description><![CDATA[The Dillinger Escape Plan (TDEP) are a special group, and I would like to
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 26 Apr 2020 13:22:33 GMT</lastBuildDate><item><title><![CDATA[TODO]]></title><description><![CDATA[I have recently quite enjoyed the use of TODO comments. On one hand, there is
+something really off-putting about having TODOs littered…]]></description><link>https://jloleysens.github.io//code/todo/</link><guid isPermaLink="false">https://jloleysens.github.io//code/todo/</guid><pubDate>Sun, 26 Apr 2020 13:14:52 GMT</pubDate><content:encoded>&lt;p&gt;I have recently quite enjoyed the use of TODO comments. On one hand, there is
+something really off-putting about having TODOs littered across your code
+base. Like threads of thought that did not have time to fully develop and are
+now dangling appendages of what could have been if only someone had finished
+the job at time, but for whatever reason could not.&lt;/p&gt;
+&lt;p&gt;At their worst, TODOs are certainly things that I would avoid placing in code.
+Your collaborators (or your future self) will come across them lacking the
+context of your train of thought. In this way a TODO comment will seem like a
+compromise (a trade-off for work unfinished) that was made without a clear
+rationale. Usually a standard comment is more appropriate and should be used
+liberally in cases where code may be in a state that is hard for new readers
+to understand.&lt;/p&gt;
+&lt;p&gt;At their best, TODOs are indicators of future work &lt;em&gt;placed right in the code&lt;/em&gt;.
+It should be very clear to others (and your future self) what it is
+that is yet to be done here; the surrounding code &lt;em&gt;is&lt;/em&gt; your context. It could
+be a brief description of an improvement or a simple indicator that standard
+protocol was skipped for the sake of brevity. “Ah”, they will say, “clearly a
+new in-the-works component will replace this minimally viable one in future.
+I am not going to spend time on improvements here”. That would be an awesome
+outcome for a humble TODO comment. You have saved yourself and someone else
+time by placing a clear marker in the code.&lt;/p&gt;
+&lt;p&gt;Another excellent use of a TODO is when writing front-end code which often
+calls for high quality copy that end users will read. In the early stages of
+development of a new feature it is not worth spending time on this because your
+work is in a state of flux. Figuring out copy while making architecture
+decisions is time ill-spent. A simple &lt;code class=&quot;language-text&quot;&gt;TODO: translate&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;TODO: review copy&lt;/code&gt; comment will save you the mental tax of worrying about a separate
+concern when all you need is a button in the UI that says: “Do the thing”.
+The TODO will be especially useful when, in future, someone returns to address
+these TODOs and can search for a &lt;em&gt;consistent&lt;/em&gt; convention. All translations
+marked with &lt;code class=&quot;language-text&quot;&gt;TODO: translate&lt;/code&gt;, for instance.&lt;/p&gt;
+&lt;p&gt;I have written many unhelpful comments and TODOs in the past. These
+have the spin-off of creating double or triple work:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When you return to re-read it and are not in the same flow&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When someone
+else reads it and misinterprets it, contacting you to explain your gibberish&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When someone else reads it, thinks they understand, executes based on their understanding,
+then requests your review; leaving you with the job of reviewing and
+re-explaining what you meant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;All of this actually goes to say; write comments as “context-free” as
+possible. The surrounding code may be all context that remains when you or
+others return. Also write executable TODOs.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[On The Dillinger Escape Plan]]></title><description><![CDATA[The Dillinger Escape Plan (TDEP) are a special group, and I would like to
 talk about why. I have probably listened to roughly 80% of their…]]></description><link>https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</link><guid isPermaLink="false">https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</guid><pubDate>Fri, 10 Apr 2020 12:38:13 GMT</pubDate><content:encoded>&lt;p&gt;The Dillinger Escape Plan (TDEP) are a special group, and I would like to
 talk about why. I have probably listened to roughly 80% of their discography
 and I was enraptured by their unique style that sought to undo many of the
