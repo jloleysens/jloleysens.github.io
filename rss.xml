@@ -1,4 +1,149 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 26 Apr 2020 13:22:33 GMT</lastBuildDate><item><title><![CDATA[TODO]]></title><description><![CDATA[I have recently quite enjoyed the use of TODO comments. On one hand, there is
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 01 Jun 2020 11:17:28 GMT</lastBuildDate><item><title><![CDATA[(Don't) write FP in JS]]></title><description><![CDATA[Write FP in JSI enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
+simplicity of it. It tends to force you to…]]></description><link>https://jloleysens.github.io//code/fp-in-js/</link><guid isPermaLink="false">https://jloleysens.github.io//code/fp-in-js/</guid><pubDate>Mon, 01 Jun 2020 10:56:41 GMT</pubDate><content:encoded>&lt;h2&gt;Write FP in JS&lt;/h2&gt;
+&lt;p&gt;I enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
+simplicity of it. It tends to force you to think of one thing at a time. A
+quote that unlocked the power of FP for me is by Alan J. Perlis, as stated in
+Clojure’s rationale&lt;sup&gt;1&lt;/sup&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is better to have 100 functions operate on one data structure than to have
+10 functions operate on 10 data structures.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This idea, for me, shook the world of Object Oriented Programming (OOP). OOP
+was not rendered without use, but there is certainly something to these
+composable units (functions) that understand a shared interface. Something that
+makes me hesitate to reach for object inheritance patterns and writing my own
+APIs. Interfaces like arrays or lists. These are extremely simple data
+structures that know nothing about your business logic. When we start creating
+our own functions that operate on arrays and return arrays we quickly gain the
+ability to express different sequences of higher-level &lt;em&gt;operations&lt;/em&gt; instead of
+higher level &lt;em&gt;things&lt;/em&gt;. See Doug McIlroy’s solution to the problem of finding
+the frequency of different words in a text file&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;All of this is possible in JS - as in many other languages. What
+makes it even more pleasant to write in JS is that functions are first-class
+values in the same way that objects or numbers are. This means we can write
+functions that take functions as arguments — a pattern that is used
+extensively in many applications to solve different problems.&lt;/p&gt;
+&lt;p&gt;Taking the teachings of FP a step further we can create law-abiding functions.
+This is a more extreme version&lt;sup&gt;3&lt;/sup&gt; of the idea I stated earlier about shared
+interfaces&lt;sup&gt;4&lt;/sup&gt;. These laws mean that we can reason about the flow of
+our functions in a way that is analagous to mathematic formlae. This also leans
+into thinking about our functions a type level; give me a number (a type) and I
+will return a string (another type). I will leave further investigations into category
+theory to the reader as it is beyond the scope of this article (enjoy
+puzzle solving instead of problem solving!).&lt;/p&gt;
+&lt;p&gt;At this point I would emphasise that all of the above is why we should almost
+certainly choose for FP in JS. Why choose complexity (or complectedness) when
+simplicity is not only feasible but desirable? This is something FP can
+offer. What is more, there are theoretical or academic aspects to what I have
+mentioned but an enormous amount of practical usefulness too. JS libraries like
+&lt;a href=&quot;https://lodash.com/&quot;&gt;lodash&lt;/a&gt;&lt;sup&gt;5&lt;/sup&gt; and &lt;a href=&quot;https://ramdajs.com/&quot;&gt;ramda&lt;/a&gt; have
+demonstrated this usefulness in many real-world applications.&lt;/p&gt;
+&lt;h2&gt;Don’t write FP in JS&lt;/h2&gt;
+&lt;p&gt;Consider the following reasons you should absolutely not write FP in JS. I
+would like to explore two reasons, but in reality they are linked and are utter
+defeaters for FP in JS today.&lt;/p&gt;
+&lt;h3&gt;Tail call optimization (TCO)&lt;/h3&gt;
+&lt;p&gt;The reality is that JS is not a language that is optimised for all things FP.
+For instance, FP makes heavy use of calling functions inside of functions.
+Sometimes as a mechanism of iteration known as recursion. In a large number of
+cases this is fine but in some cases this is totally not fine and will cause
+your program to unexpectedly break.&lt;/p&gt;
+&lt;p&gt;The reason your program will break is due to optimization. More specifically,
+lack of FP optimization in how JS is built. This is not something you can code
+around. It is woven into the very fabric of what JS &lt;em&gt;is&lt;/em&gt; today. JavaScript is
+not a compiled&lt;sup&gt;6&lt;/sup&gt; or a TCO language. Even though much
+work has been done in browsers and other runtimes to mitigate this, in the year
+2020 it is still possible to blow the call stack. What does this mean? Well, in
+simple terms your program asks for more memory than is available to it because
+your implementation does not follow the JS rules™. The stack depth is of finite
+size, but the size is dependant upon the machine your JS runtime is running on.
+You can not know in all cases how far you are permitted to go. If you choose to
+implement this mechanism your code is instantly buggy. &lt;strong&gt;It will break&lt;/strong&gt;. Okay, I
+have overstated the case slightly, it will break under certain conditions.
+If you know that the data over which you are recursing will &lt;em&gt;never&lt;/em&gt; grow the
+stack beyond, say, 10 levels deep, you are in the clear. When you do not know
+how deep the stack may get you are in treachorous waters&lt;sup&gt;7&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3&gt;Immutability (or lack thereof)&lt;/h3&gt;
+&lt;p&gt;Another, and quite pressing reason to not go whole-hog FP in JS is because many
+native data structures are not immutable. Consider this code:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-js line-numbers&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; myObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// { a: 42 }&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For someone who writes code in a language optimized for FP this may be a shock,
+but to many others this may not be. The fact is objects, arrays and functions
+are passed around as values which can be changed in an in-place way. This means
+a change is visible to anyone with a reference to that value. This
+violates the simplicity provided by functional purity. In order fix this we must
+explicity copy our values. Like so: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-js line-numbers&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; myObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; myNewObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// { a: 1 }&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Problem solved! However, the problem is actually not sovled for many cases when
+we have objects inside objects inside objects inside arrays. “Luckily” strings
+and numbers are immutable. So to preserve the copying behaviour we so happily
+acheived before we would need to do this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-js line-numbers&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; originalObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; c&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; copyThatChangedD &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;originalObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;originalObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;originalObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      c&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;originalObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;originalObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Immutable facade restored! There are many programmatic implementations that
+were made to solve this very problem. But consider the case when we do not
+always know how deep our data structure may be. We are back to the problem of
+optimization I mentioned before because we will need to recurse! For
+larger object structures, we can quickly incur a large performance cost and risk blowing
+the stack again.&lt;/p&gt;
+&lt;p&gt;There are many users of the web out there happily running old Android devices or
+other low-memory environments which will not be able to handle the memory
+footprint created by forcing native JS structures to be immutable.&lt;/p&gt;
+&lt;h2&gt;Closing thoughts&lt;/h2&gt;
+&lt;p&gt;There may be other cases where FP in JS is a bad fit, but I have tried to touch
+on what I believe to the most problematic areas at present. So do we abandon
+the FP in JS project? Definitely not! My advice is to be cautious when
+implementing FP in JS. Think carefully about the environment in which your code
+will run given the constraints in place. Use mutation to your advantage, it is
+a truly powerful tool and your only saving grace for low(er)-memory devices
+accessing your website or sending data to your JS server.&lt;/p&gt;
+&lt;p&gt;Again, do not abandon FP in JS. It is a truly powerful tool that can help
+create a simpler code base and it has a truly amazing friend in JS.
+Unfortunately there are operational concerns that mean you will need to be a
+cautious and pragmatic FP in JS programmer today. Well, actually, always be
+pragmatic, please!&lt;/p&gt;
+&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Listed as one of the points
+&lt;a href=&quot;https://clojure.org/about/rationale#_object_orientation_is_overrated&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;See &lt;a href=&quot;https://youtu.be/AkYDsiRVqno?t=875&quot;&gt;this&lt;/a&gt; section (roughly 2 minutes long) of a talk by Stefan
+Tilkov. With special focus on the implementation by Donald Knuth vs Doug McIlroy.&lt;/li&gt;
+&lt;li&gt;Today, at time of writing, I would argue pathologically extreme.&lt;/li&gt;
+&lt;li&gt;See a library like &lt;a href=&quot;https://github.com/gcanti/fp-ts&quot;&gt;fp-ts&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Please do not add this entire library as a dependency in new projects. There
+are many security vulnerabilities that come with it and much of it’s
+functionality has since been made available through JS natively.&lt;/li&gt;
+&lt;li&gt;TypeScript is a &lt;em&gt;transpiler&lt;/em&gt; not a &lt;em&gt;compiler&lt;/em&gt; even though it may perform
+tasks that are similar to a compiler.&lt;/li&gt;
+&lt;li&gt;I have run into this very issue using a library like &lt;a href=&quot;https://github.com/immerjs/immer&quot;&gt;immer&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[TODO]]></title><description><![CDATA[I have recently quite enjoyed the use of TODO comments. On one hand, there is
 something really off-putting about having TODOs littered…]]></description><link>https://jloleysens.github.io//code/todo/</link><guid isPermaLink="false">https://jloleysens.github.io//code/todo/</guid><pubDate>Sun, 26 Apr 2020 13:14:52 GMT</pubDate><content:encoded>&lt;p&gt;I have recently quite enjoyed the use of TODO comments. On one hand, there is
 something really off-putting about having TODOs littered across your code
 base. Like threads of thought that did not have time to fully develop and are
