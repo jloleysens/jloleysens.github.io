@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 01 Jun 2020 11:17:28 GMT</lastBuildDate><item><title><![CDATA[(Don't) write FP in JS]]></title><description><![CDATA[Write FP in JSI enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JλO]]></title><description><![CDATA[Mah blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Jun 2020 14:37:12 GMT</lastBuildDate><item><title><![CDATA[The most important thing a programmer does]]></title><description><![CDATA[In JavaScript there are so many different technologies to learn and become
+proficient with. Each introducing its own mental model and best…]]></description><link>https://jloleysens.github.io//code/most-important/</link><guid isPermaLink="false">https://jloleysens.github.io//code/most-important/</guid><pubDate>Mon, 15 Jun 2020 14:31:39 GMT</pubDate><content:encoded>&lt;p&gt;In JavaScript there are so many different technologies to learn and become
+proficient with. Each introducing its own mental model and best practices.
+This spans databases all the way to user experience (UX) concerns. For some of
+these technologies understanding the operational concerns involved is a
+non-trivial learning curve in itself. For instance, properly configuring a
+database for your application is of vital importance for any serious web
+application. The structuring but also the scaling of the database. Granted, the
+advent of cloud in the early 2010s has made a lot of these operational concerns
+easier to get started with however they have a silent cost of abstracting away
+many details that can cause major issues or headaches in specific instances -
+you may risk running an excessively large bill to the cloud providers
+delight!&lt;/p&gt;
+&lt;p&gt;The point of this post is to say that none of these things are &lt;em&gt;actually&lt;/em&gt; important
+for the programmer. Or at least not of the highest import. Understanding
+different technologies can be substituted with understanding different
+models and techniques and what &lt;em&gt;algorithms&lt;/em&gt; these different methods and
+techniques make feasible or infeasible. The most important role of
+the programmer by my estimation is that of algorithmist. The individual
+who cares most about what sequential steps are taken to solve a problem is
+predisposed to a vital part of programming. This individual cares at a low-level
+about the order of execution.&lt;/p&gt;
+&lt;p&gt;Take the example of a shopping cart. You can add and remove things from the
+shopping cart. The shopping cart knows what products it. It also knows that
+if it has two of the same product it should not display two of the same product
+but rather a count of the number of items of that particular product.&lt;/p&gt;
+&lt;p&gt;Think about how you might add something to a cart like this.&lt;/p&gt;
+&lt;p&gt;Now think about how you might remove something from a cart like this.&lt;/p&gt;
+&lt;p&gt;Clearly there are some concerns which must be wrestled with in order to create
+the correct behaviour. The correct algorithm. Here is my fast and loose, imperative-style, take
+on a solution:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-javascript line-numbers&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// A cart containing product objects with id and count: { id: number, count: number } &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; cart &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;addToCart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;productToAdd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; product &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; cart&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;product&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; productToAdd&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;// In JS ++ before the variable produces a different algorithm to&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;// ++ after the variable. Not of great import here however.&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;product&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;productToAdd&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; count&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;removeFromCart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;productToRemove&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; idx &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; idx &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; product &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cart&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;product&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; productToRemove&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;// Here our unary first changes the algorithm&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;product&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        cart&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I’d challenge the reader to consider how an algorithm might be written that
+cannot work by mutation as many languages require and certain patterns in
+JavaScript like flux.&lt;/p&gt;
+&lt;p&gt;I intended this post as a reminder to myself, more than for others about the biggest, most important role of the programmer. Happy algorithming!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Don't) write FP in JS]]></title><description><![CDATA[Write FP in JSI enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
 simplicity of it. It tends to force you to…]]></description><link>https://jloleysens.github.io//code/fp-in-js/</link><guid isPermaLink="false">https://jloleysens.github.io//code/fp-in-js/</guid><pubDate>Mon, 01 Jun 2020 10:56:41 GMT</pubDate><content:encoded>&lt;h2&gt;Write FP in JS&lt;/h2&gt;
 &lt;p&gt;I enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
 simplicity of it. It tends to force you to think of one thing at a time. A
