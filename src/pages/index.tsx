@@ -27,6 +27,7 @@ function Index(props: any) {
       {[
         { name: 'Programming', slug: '/code' },
         { name: 'Music', slug: '/music' },
+        { name: 'Video Games', slug: '/video-games' },
       ].map(thing => {
         return (
           <h3

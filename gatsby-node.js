@@ -61,6 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
   return Promise.all([
     categoryBlogCreator('code', graphql, createPage),
     categoryBlogCreator('music', graphql, createPage),
+    categoryBlogCreator('video-games', graphql, createPage),
   ]);
 };
 
@@ -73,10 +74,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       getNode,
     });
 
+
     const value = node.fileAbsolutePath.includes('/code/')
       ? `/code${maybePathTailSection}`
       : node.fileAbsolutePath.includes('/music/')
       ? `/music${maybePathTailSection}`
+      : node.fileAbsolutePath.includes('/video-games/')
+      ? `/video-games${maybePathTailSection}`
       : maybePathTailSection;
 
     createNodeField({
