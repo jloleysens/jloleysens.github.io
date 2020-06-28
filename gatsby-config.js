@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'JλO',
     author: 'Jean-Louis Leysens',
-    description: 'Mah blog',
+    description: "Jean-Louis Leysens' blog",
     siteUrl: 'https://jloleysens.github.io/',
     social: {
       twitter: 'JLo616',
@@ -79,12 +79,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-typescript',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        //trackingId: 'ADD YOUR TRACKING ID HERE',
-      },
-    },
     'gatsby-plugin-feed',
     {
       resolve: 'gatsby-plugin-manifest',
