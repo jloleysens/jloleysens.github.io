@@ -7,10 +7,9 @@ import { rhythm } from '../utils/typography';
 
 function Index(props: any) {
   const { data } = props;
-  const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={'JλO'}>
       <SEO
         title="Home"
         keywords={[
