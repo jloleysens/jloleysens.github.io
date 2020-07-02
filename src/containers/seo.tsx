@@ -35,6 +35,13 @@ function SEO({ description, lang, meta, keywords, title }: Props) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const defaultKeywords = [
+    'jloleysens',
+    'Jean-Louis',
+    'Leysens',
+    'Jean-Louis Leysens',
+    'blog',
+  ];
 
   return (
     <Helmet
@@ -61,6 +68,10 @@ function SEO({ description, lang, meta, keywords, title }: Props) {
           content: 'website',
         },
         {
+          property: 'og:url',
+          content: process.env.WEBSITE_URL,
+        },
+        {
           name: 'twitter:card',
           content: 'summary',
         },
@@ -77,14 +88,10 @@ function SEO({ description, lang, meta, keywords, title }: Props) {
           content: metaDescription,
         },
       ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: 'keywords',
-                content: keywords.join(', '),
-              }
-            : []
-        )
+        .concat({
+          name: 'keywords',
+          content: defaultKeywords.concat(keywords).join(', '),
+        })
         .concat(meta)}
     />
   );

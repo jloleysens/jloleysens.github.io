@@ -13,7 +13,6 @@ function Index(props: any) {
       <SEO
         title="Home"
         keywords={[
-          'blog',
           'javascript',
           'music',
           'punk',

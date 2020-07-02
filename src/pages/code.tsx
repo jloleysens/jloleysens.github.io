@@ -14,12 +14,7 @@ function Code(props: any) {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Code Blog"
-        keywords={[
-          'blog',
-          'javascript',
-          'typescript',
-          'functional programming',
-        ]}
+        keywords={['javascript', 'typescript', 'functional programming']}
       />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title;

@@ -14,7 +14,7 @@ function Music(props: any) {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Music Blog"
-        keywords={['blog', 'music', 'punk', 'post-metal', 'metal']}
+        keywords={['music', 'punk', 'post-metal', 'metal']}
       />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
