@@ -4,7 +4,6 @@ import { rhythm, scale } from '../utils/typography';
 import { FlexGroup, FlexItem, GithubButtonIcon } from '../components';
 
 function Bio() {
-  const { assetsUrlPath } = useAppContext();
   return (
     <FlexGroup direction="column" style={{ marginBottom: rhythm(2.5), }} >
       <FlexItem>
