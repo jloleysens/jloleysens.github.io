@@ -3,8 +3,9 @@ import { ThemeProvider } from 'styled-components';
 
 import { Modes, getColorTheme } from '../styles';
 
-const AppContext = React.createContext<{
+export const AppContext = React.createContext<{
   mode: [string, React.Dispatch<React.SetStateAction<Modes>>];
+  assetsUrlPath: string;
 }>(undefined);
 
 export function AppContextProvider({ children }: any) {
@@ -13,7 +14,8 @@ export function AppContextProvider({ children }: any) {
     <ThemeProvider theme={getColorTheme(mode)}>
       <AppContext.Provider
         value={{
-          mode: [mode, setMode],
+	 mode: [mode, setMode],
+			assetsUrlPath: '/assets'
         }}
       >
         {children}

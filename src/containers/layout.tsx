@@ -1,5 +1,3 @@
-// TODO: Move this to another directory called 'containers'
-
 import React from 'react';
 import { Link } from 'gatsby';
 import { ThemeContext } from 'styled-components';
@@ -128,7 +126,7 @@ function Layout({ location, children, back }: any) {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />{' '}
+        <Bio />
       </components.MainContainer>
     </div>
   );

@@ -6,7 +6,7 @@ import React from 'react';
 import './src/variables.css';
 import './src/md-helper-styles.css';
 
-import { AppContextProvider } from './src/context/AppContext';
+import { AppContextProvider } from './src/context';
 
 export function wrapRootElement({ element }) {
   return <AppContextProvider>{element}</AppContextProvider>;
