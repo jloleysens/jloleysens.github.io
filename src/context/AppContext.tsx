@@ -14,8 +14,8 @@ export function AppContextProvider({ children }: any) {
     <ThemeProvider theme={getColorTheme(mode)}>
       <AppContext.Provider
         value={{
-	 mode: [mode, setMode],
-			assetsUrlPath: '/assets'
+	  mode: [mode, setMode],
+	  assetsUrlPath: '/assets'
         }}
       >
         {children}
