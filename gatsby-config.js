@@ -3,7 +3,7 @@ module.exports = {
     title: 'Jean-Louis Leysens',
     author: 'Jean-Louis Leysens',
     description: "Jean-Louis Leysens' blog",
-    siteUrl: 'https://jloleysens.github.io/',
+    siteUrl: 'https://sombrerob.ro/',
     social: {
       twitter: 'JLo616',
     },
@@ -15,6 +15,7 @@ module.exports = {
         trackingId: 'UA-65971085-2',
       },
     },
+    'gatsby-plugin-cname',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
