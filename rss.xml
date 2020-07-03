@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jean-Louis Leysens]]></title><description><![CDATA[Jean-Louis Leysens' blog]]></description><link>https://jloleysens.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 03 Jul 2020 17:33:00 GMT</lastBuildDate><item><title><![CDATA[The Last of Us & The Last of Us part II]]></title><description><![CDATA[The Last of Us (TLOU) part II was released on June 19th 2020. The studio
-that masterminded its creation, Naughty Dog, has dedicated an…]]></description><link>https://jloleysens.github.io//video-games/tlou-part-ii/</link><guid isPermaLink="false">https://jloleysens.github.io//video-games/tlou-part-ii/</guid><pubDate>Sun, 28 Jun 2020 10:47:52 GMT</pubDate><content:encoded>&lt;p&gt;The Last of Us (TLOU) part II was released on June 19th 2020. The studio
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jean-Louis Leysens]]></title><description><![CDATA[Jean-Louis Leysens' blog]]></description><link>https://sombrerob.ro/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 03 Jul 2020 17:37:26 GMT</lastBuildDate><item><title><![CDATA[The Last of Us & The Last of Us part II]]></title><description><![CDATA[The Last of Us (TLOU) part II was released on June 19th 2020. The studio
+that masterminded its creation, Naughty Dog, has dedicated an…]]></description><link>https://sombrerob.ro//video-games/tlou-part-ii/</link><guid isPermaLink="false">https://sombrerob.ro//video-games/tlou-part-ii/</guid><pubDate>Sun, 28 Jun 2020 10:47:52 GMT</pubDate><content:encoded>&lt;p&gt;The Last of Us (TLOU) part II was released on June 19th 2020. The studio
 that masterminded its creation, Naughty Dog, has dedicated an enormous amount
 of resources to creating this game. And I think what they have made reaches
 beyond the scope of video game and deep into the realm of art and story telling.
@@ -107,7 +107,7 @@ feel guilt when your character murders another important character. For this
 I can suspend my disbelief and treat enemies as puzzles, nothing more. Even though
 the game tries to trick you into thinking they are also people by giving them names 🙄.&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[The most important thing a programmer does]]></title><description><![CDATA[In JavaScript there are so many different technologies to learn and become
-proficient with. Each introducing its own mental model and best…]]></description><link>https://jloleysens.github.io//code/most-important/</link><guid isPermaLink="false">https://jloleysens.github.io//code/most-important/</guid><pubDate>Mon, 15 Jun 2020 14:31:39 GMT</pubDate><content:encoded>&lt;p&gt;In JavaScript there are so many different technologies to learn and become
+proficient with. Each introducing its own mental model and best…]]></description><link>https://sombrerob.ro//code/most-important/</link><guid isPermaLink="false">https://sombrerob.ro//code/most-important/</guid><pubDate>Mon, 15 Jun 2020 14:31:39 GMT</pubDate><content:encoded>&lt;p&gt;In JavaScript there are so many different technologies to learn and become
 proficient with. Each introducing its own mental model and best practices.
 This spans databases all the way to user experience (UX) concerns. For some of
 these technologies understanding the operational concerns involved is a
@@ -168,7 +168,7 @@ on a solution:&lt;/p&gt;
 cannot work by mutation as many languages require and certain patterns in
 JavaScript like flux.&lt;/p&gt;
 &lt;p&gt;I intended this post as a reminder to myself, more than for others about the biggest, most important role of the programmer. Happy algorithming!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[(Don't) write FP in JS]]></title><description><![CDATA[Write FP in JSI enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
-simplicity of it. It tends to force you to…]]></description><link>https://jloleysens.github.io//code/fp-in-js/</link><guid isPermaLink="false">https://jloleysens.github.io//code/fp-in-js/</guid><pubDate>Mon, 01 Jun 2020 10:56:41 GMT</pubDate><content:encoded>&lt;h2&gt;Write FP in JS&lt;/h2&gt;
+simplicity of it. It tends to force you to…]]></description><link>https://sombrerob.ro//code/fp-in-js/</link><guid isPermaLink="false">https://sombrerob.ro//code/fp-in-js/</guid><pubDate>Mon, 01 Jun 2020 10:56:41 GMT</pubDate><content:encoded>&lt;h2&gt;Write FP in JS&lt;/h2&gt;
 &lt;p&gt;I enjoy the teachings and precepts of Functional Programming (FP). I enjoy the
 simplicity of it. It tends to force you to think of one thing at a time. A
 quote that unlocked the power of FP for me is by Alan J. Perlis, as stated in
@@ -313,7 +313,7 @@ functionality has since been made available through JS natively.&lt;/li&gt;
 tasks that are similar to a compiler.&lt;/li&gt;
 &lt;li&gt;I have run into this very issue using a library like &lt;a href=&quot;https://github.com/immerjs/immer&quot;&gt;immer&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[TODO]]></title><description><![CDATA[I have recently quite enjoyed the use of TODO comments. On one hand, there is
-something really off-putting about having TODOs littered…]]></description><link>https://jloleysens.github.io//code/todo/</link><guid isPermaLink="false">https://jloleysens.github.io//code/todo/</guid><pubDate>Sun, 26 Apr 2020 13:14:52 GMT</pubDate><content:encoded>&lt;p&gt;I have recently quite enjoyed the use of TODO comments. On one hand, there is
+something really off-putting about having TODOs littered…]]></description><link>https://sombrerob.ro//code/todo/</link><guid isPermaLink="false">https://sombrerob.ro//code/todo/</guid><pubDate>Sun, 26 Apr 2020 13:14:52 GMT</pubDate><content:encoded>&lt;p&gt;I have recently quite enjoyed the use of TODO comments. On one hand, there is
 something really off-putting about having TODOs littered across your code
 base. Like threads of thought that did not have time to fully develop and are
 now dangling appendages of what could have been if only someone had finished
@@ -362,7 +362,7 @@ re-explaining what you meant.&lt;/p&gt;
 &lt;p&gt;All of this actually goes to say; write comments as “context-free” as
 possible. The surrounding code may be all context that remains when you or
 others return. Also write executable TODOs.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[On The Dillinger Escape Plan]]></title><description><![CDATA[The Dillinger Escape Plan (TDEP) are a special group, and I would like to
-talk about why. I have probably listened to roughly 80% of their…]]></description><link>https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</link><guid isPermaLink="false">https://jloleysens.github.io//music/on-the-dillinger-escape-plan/</guid><pubDate>Fri, 10 Apr 2020 12:38:13 GMT</pubDate><content:encoded>&lt;p&gt;The Dillinger Escape Plan (TDEP) are a special group, and I would like to
+talk about why. I have probably listened to roughly 80% of their…]]></description><link>https://sombrerob.ro//music/on-the-dillinger-escape-plan/</link><guid isPermaLink="false">https://sombrerob.ro//music/on-the-dillinger-escape-plan/</guid><pubDate>Fri, 10 Apr 2020 12:38:13 GMT</pubDate><content:encoded>&lt;p&gt;The Dillinger Escape Plan (TDEP) are a special group, and I would like to
 talk about why. I have probably listened to roughly 80% of their discography
 and I was enraptured by their unique style that sought to undo many of the
 comforts we have in conventional song-writing and musicianship.&lt;/p&gt;
@@ -419,7 +419,7 @@ dynamism while staying true to the narrative they would go on to develop.&lt;/p&
 &lt;ol&gt;
 &lt;li&gt;How is this from 2007?&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Errors and Either]]></title><description><![CDATA[Welcome to yet another post on the Internet about Monads! I am only mostly
-kidding. I do not intend to use this post as an introduction to…]]></description><link>https://jloleysens.github.io//code/either/</link><guid isPermaLink="false">https://jloleysens.github.io//code/either/</guid><pubDate>Wed, 25 Mar 2020 17:52:07 GMT</pubDate><content:encoded>&lt;br /&gt;
+kidding. I do not intend to use this post as an introduction to…]]></description><link>https://sombrerob.ro//code/either/</link><guid isPermaLink="false">https://sombrerob.ro//code/either/</guid><pubDate>Wed, 25 Mar 2020 17:52:07 GMT</pubDate><content:encoded>&lt;br /&gt;
 &lt;p&gt;Welcome to yet another post on the Internet about Monads! I am only mostly
 kidding. I do not intend to use this post as an introduction to
 Monads&lt;sup&gt;1&lt;/sup&gt;. This post is actually a continuation of &lt;a href=&quot;../errors&quot;&gt;my post on
@@ -716,7 +716,7 @@ function&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://youtu.be/YR5WdGrpoug&quot;&gt;This talk&lt;/a&gt; by Rich Hickey is quite a famous one that contains a lot of wisdom regarding some of the pitfalls of
 abstract data types.&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Errors]]></title><description><![CDATA[Program errors are intended to express unexpected events during the carrying out of a set of instructions.
-An unexpected event may sound…]]></description><link>https://jloleysens.github.io//code/errors/</link><guid isPermaLink="false">https://jloleysens.github.io//code/errors/</guid><pubDate>Sat, 21 Mar 2020 13:40:10 GMT</pubDate><content:encoded>&lt;br/&gt;
+An unexpected event may sound…]]></description><link>https://sombrerob.ro//code/errors/</link><guid isPermaLink="false">https://sombrerob.ro//code/errors/</guid><pubDate>Sat, 21 Mar 2020 13:40:10 GMT</pubDate><content:encoded>&lt;br/&gt;
 &lt;p&gt;Program errors are intended to express unexpected events during the carrying out of a set of instructions.
 An &lt;em&gt;unexpected event&lt;/em&gt; may sound like a rare, special occurrence that requires extraordinary measures, but
 in programming errors are far from rare and, as I hope to argue, should also be as far from special
@@ -840,10 +840,10 @@ hidden amidst a lot more text usually.&lt;/li&gt;
 &lt;li&gt;Consider checking out &lt;a href=&quot;https://gcanti.github.io/fp-ts/&quot;&gt;fp-ts&lt;/a&gt; — very cool TypeScript implementations of common abstract data structures.&lt;/li&gt;
 &lt;li&gt;Monads are one response to forcing us to engage with the possibility that many parts of our program can
 create “unexpected” results.&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Elastic and Zdog]]></title><description><![CDATA[(drag the logo)]]></description><link>https://jloleysens.github.io//code/elastic-and-zdog/</link><guid isPermaLink="false">https://jloleysens.github.io//code/elastic-and-zdog/</guid><pubDate>Mon, 19 Aug 2019 04:40:35 GMT</pubDate><content:encoded>&lt;h5&gt;(drag the logo)&lt;/h5&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Elastic and Zdog]]></title><description><![CDATA[(drag the logo)]]></description><link>https://sombrerob.ro//code/elastic-and-zdog/</link><guid isPermaLink="false">https://sombrerob.ro//code/elastic-and-zdog/</guid><pubDate>Mon, 19 Aug 2019 04:40:35 GMT</pubDate><content:encoded>&lt;h5&gt;(drag the logo)&lt;/h5&gt;
 &lt;div style=&quot;height: 400px; width: 400px; margin: 0 auto;&quot;&gt;
   &lt;iframe style=&quot;height: 100%; width: 100%;&quot; scrolling=&quot;no&quot; frameBorder=&quot;0&quot; src=&quot;../../htmls/zdog-elastic-logo.html&quot;&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[On The Chariot]]></title><description><![CDATA[*Tana-ta-tana-ta-tana-ta-tana-ta**Tana-ta-tana-ta-tana-ta-tana-ta*This is the last chance you get… Open wide!— The ChariotFor many people…]]></description><link>https://jloleysens.github.io//music/the-chariot/</link><guid isPermaLink="false">https://jloleysens.github.io//music/the-chariot/</guid><pubDate>Sun, 19 May 2019 13:50:43 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[On The Chariot]]></title><description><![CDATA[*Tana-ta-tana-ta-tana-ta-tana-ta**Tana-ta-tana-ta-tana-ta-tana-ta*This is the last chance you get… Open wide!— The ChariotFor many people…]]></description><link>https://sombrerob.ro//music/the-chariot/</link><guid isPermaLink="false">https://sombrerob.ro//music/the-chariot/</guid><pubDate>Sun, 19 May 2019 13:50:43 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;*Tana-ta-tana-ta-tana-ta-tana-ta*&lt;/p&gt;
 &lt;p&gt;*Tana-ta-tana-ta-tana-ta-tana-ta*&lt;/p&gt;
 &lt;p&gt;This is the last chance you get… Open wide!&lt;/p&gt;
