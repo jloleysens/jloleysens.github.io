@@ -15,7 +15,7 @@ function Bio() {
       <FlexItem>
          <GithubButtonIcon />
 	 <div style={{ marginLeft: rhythm(1) }} />
-	 <a style={{ fontSize: '0.8rem' }} href={`/assets/pgp-public.txt.asc`} download>
+	 <a style={{ fontSize: '0.8rem' }} href="/pgp-public.txt.asc"} download>
 	   My public PGP key
          </a>
       </FlexItem>
