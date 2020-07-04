@@ -1,3 +1,4 @@
 #! /usr/bin/env bash
 
-for f in $(find ./content -name "index.md"); do ./scripts/pgp-sign $f; done
+for f in $(find ./content/blog -name "index.md"); do ./scripts/pgp-sign $f; done
+echo "Done!"

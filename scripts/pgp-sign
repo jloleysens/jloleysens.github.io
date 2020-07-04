@@ -1,3 +1,4 @@
 #! /usr/bin/env bash
 
 gpg --detach-sign --armor $1
+echo "Done signing $1"
