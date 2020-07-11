@@ -36,10 +36,12 @@ function SEO({ description, lang, meta, keywords, title }: Props) {
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultKeywords = [
+    'sombrerob.ro',
+    'sombrerobro',
     'jloleysens',
+    'JeanLouis',
     'Jean-Louis',
     'Leysens',
-    'Jean-Louis Leysens',
     'blog',
   ];
 
