@@ -1,4 +1,19 @@
 #! /usr/bin/env bash
 
-for f in $(find ./content/blog -name "index.md"); do ./scripts/pgp-sign $f; done
+YELLOW='\033[1;33m'
+NC='\033[0m'
+RE_SIGN=$1
+
+function yellow {
+  echo -e "${YELLOW}$1${NC}"
+}
+
+for f in $(find ./content/blog -name "index.md"); do
+  if [ ! -f "$f.asc"  ] || [[ "$RE_SIGN" = "--re-sign" ]]; then
+    ./scripts/pgp-sign $f
+  else
+    yellow "Already signed $f."
+  fi
+done
+
 echo "Done!"
