@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { rhythm } from '../utils/typography';
 
 export const HeaderContainer: any = styled.header`
-  padding-top: ${() => rhythm(1.5)};
   display: flex;
   flex-direction: column;
+
+  padding-top: ${() => rhythm(1.5)};
   border-bottom: 1px solid grey;
   height: ${(props: any) => (props.isRootPath ? rhythm(6) : rhythm(3))};
   justify-content: center;
@@ -34,8 +35,9 @@ export const SmallHeading = styled.h3`
 `;
 
 export const MainContainer = styled.main`
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: ${() => rhythm(24)};
+  max-width: min(100vw, ${() => rhythm(24)});
   padding: ${() => `${rhythm(1.5)} ${rhythm(3 / 4)}`};
 `;
