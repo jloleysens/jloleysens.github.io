@@ -3,6 +3,7 @@ import funstonTheme from 'typography-theme-funston';
 
 funstonTheme.headerFontFamily = ['Fira Mono', 'monospace'];
 funstonTheme.bodyFontFamily = ['Fira Sans', 'sans-serif'];
+funstonTheme.baseLineHeight = 1.5;
 
 const typography = Typography(funstonTheme);
 
