@@ -1,61 +1,58 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import Image from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm } from '../utils/typography';
 import Bio from '../containers/bio';
 import { useThemeSetup } from '../hooks/use-theme-setup';
-import * as components from '../components/typographical';
+import * as components from '../components';
 
 function MainHeading({ author, image }: { author: string; image: any }) {
   return (
-    <>
-      <h1
-        style={{
-          display: 'flex',
-          alignSelf: 'center',
-          marginBottom: 0,
-          marginTop: 0,
-        }}
-      >
-        <Link style={{ color: 'var(--a-light)' }} to={'/'}>
-          {'J'}
-          {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
-          {'O'}
-        </Link>
-      </h1>
-      <components.ImageContainer>
-        <Image
-          fixed={image}
-          alt={author}
+    <components.FlexGroup direction="column">
+      <components.FlexItem>
+        <h1
           style={{
-            width: 75,
-            height: 75,
-            borderRadius: '100%',
+            marginBottom: 0,
+            marginTop: 0,
           }}
-          imgStyle={{
-            borderRadius: '50%',
-          }}
-        />
-      </components.ImageContainer>
-    </>
+        >
+          <Link style={{ color: 'var(--a-light)' }} to={'/'}>
+            {'J'}
+            {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
+            {'O'}
+          </Link>
+        </h1>
+      </components.FlexItem>
+      <components.FlexItem>
+        <components.ImageContainer>
+          <Image
+            fixed={image}
+            alt={author}
+            style={{
+              width: 75,
+              height: 75,
+              borderRadius: '100%',
+            }}
+            imgStyle={{
+              borderRadius: '50%',
+            }}
+          />
+        </components.ImageContainer>
+      </components.FlexItem>
+    </components.FlexGroup>
   );
 }
 
 function SmallHeading() {
+  const MySmallH3 = styled.h3`
+    margin: 0 ${() => rhythm(0.5)};
+    color: var(--a-light);
+  `;
   return (
-    <h3
-      style={{
-        display: 'flex',
-        alignSelf: 'center',
-        marginLeft: rhythm(0.5),
-        marginRight: rhythm(0.5),
-        marginTop: 0,
-        color: 'var(--a-light)',
-      }}
-    >
+    <MySmallH3>
       <Link
         style={{
           boxShadow: 'none',
@@ -68,9 +65,25 @@ function SmallHeading() {
         {<span style={{ fontFamily: 'sans-serif' }}>λ</span>}
         {'O'}
       </Link>
-    </h3>
+    </MySmallH3>
   );
 }
+
+const StickyContainer = styled.div`
+  position: relative;
+`;
+
+const StickyContent = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
+  display: flex;
+  position: sticky;
+  padding-right: ${() => rhythm(1)};
+  margin-top: ${() => rhythm(1.5)};
+  width: fit-content;
+  top: ${() => rhythm(1)};
+`;
 
 function Layout({ location, children, back }: any) {
   const themeContext = React.useContext(ThemeContext);
@@ -99,36 +112,46 @@ function Layout({ location, children, back }: any) {
   useThemeSetup(themeContext);
 
   return (
-    <div>
+    <StickyContainer>
       <components.HeaderContainer isRootPath={isRootPath}>
-        {isRootPath
-          ? MainHeading({ author, image: data.avatar.childImageSharp.fixed })
-          : SmallHeading()}
+        <components.FlexGroup direction="column" alignItems="center">
+          <components.FlexItem>
+            {isRootPath
+              ? MainHeading({
+                  author,
+                  image: data.avatar.childImageSharp.fixed,
+                })
+              : SmallHeading()}
+          </components.FlexItem>
+        </components.FlexGroup>
       </components.HeaderContainer>
-      <components.MainContainer>
+      <components.FlexGroup>
         {back ? (
-          <Link
-            style={{
-              fontSize: rhythm(1.5),
-              position: 'fixed',
-              top: '120px',
-              transform: 'translateX(-100px)',
-            }}
-            to={`/${back}`}
-          >
-            {'<'}
-          </Link>
+          <StickyContent>
+            <Link
+              style={{
+                fontSize: rhythm(1.5),
+              }}
+              to={`/${back}`}
+            >
+              {'<'}
+            </Link>
+          </StickyContent>
         ) : null}
-        {children}
-        <hr
-          style={{
-            marginTop: rhythm(0.5),
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-      </components.MainContainer>
-    </div>
+        <components.FlexItem>
+          <components.MainContainer>
+            {children}
+            <hr
+              style={{
+                marginTop: rhythm(0.5),
+                marginBottom: rhythm(1),
+              }}
+            />
+            <Bio />
+          </components.MainContainer>
+        </components.FlexItem>
+      </components.FlexGroup>
+    </StickyContainer>
   );
 }
 
