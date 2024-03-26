@@ -40,29 +40,27 @@ function Code(props: any) {
 
 export default Code;
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//code//" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
+  }
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "//code//"}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
         }
       }
     }
   }
-`;
+}`;

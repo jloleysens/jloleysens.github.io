@@ -8,7 +8,7 @@ function categoryBlogCreator(category, graphql, createPage) {
       {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "//${category}//" } }
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { frontmatter: { date: DESC } }
           limit: 1000
         ) {
           edges {

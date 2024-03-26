@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled, { ThemeContext } from 'styled-components';
-import Image from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm } from '../utils/typography';
 import Bio from '../containers/bio';
-import { useThemeSetup } from '../hooks/use-theme-setup';
+import { doThemeSetup } from '../hooks/use-theme-setup';
 import * as components from '../components';
+import { Theme } from '../styles';
 
-function MainHeading({ author, image }: { author: string; image: any }) {
+function MainHeading({ author }: { author: string; }) {
   return (
     <components.FlexGroup direction="column">
       <components.FlexItem>
@@ -28,8 +29,8 @@ function MainHeading({ author, image }: { author: string; image: any }) {
       </components.FlexItem>
       <components.FlexItem>
         <components.ImageContainer>
-          <Image
-            fixed={image}
+          <StaticImage
+            src="../../content/assets/profile-pic.jpg"
             alt={author}
             style={{
               width: 75,
@@ -46,11 +47,11 @@ function MainHeading({ author, image }: { author: string; image: any }) {
   );
 }
 
+const MySmallH3 = styled.h3`
+  margin: 0 ${() => rhythm(0.5)};
+  color: var(--a-light);
+`;
 function SmallHeading() {
-  const MySmallH3 = styled.h3`
-    margin: 0 ${() => rhythm(0.5)};
-    color: var(--a-light);
-  `;
   return (
     <MySmallH3>
       <Link
@@ -91,13 +92,6 @@ function Layout({ location, children, back }: any) {
   const data = useStaticQuery(
     graphql`
       query LayoutQuery {
-        avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-          childImageSharp {
-            fixed(width: 125, height: 125) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
         site {
           siteMetadata {
             author
@@ -109,7 +103,7 @@ function Layout({ location, children, back }: any) {
   const { author } = data.site.siteMetadata;
   const isRootPath = location.pathname === rootPath;
 
-  useThemeSetup(themeContext);
+  if (themeContext) doThemeSetup(themeContext as Theme);
 
   return (
     <StickyContainer>
@@ -119,7 +113,6 @@ function Layout({ location, children, back }: any) {
             {isRootPath
               ? MainHeading({
                   author,
-                  image: data.avatar.childImageSharp.fixed,
                 })
               : SmallHeading()}
           </components.FlexItem>

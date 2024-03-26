@@ -6,8 +6,6 @@ import SEO from '../containers/seo';
 import { rhythm } from '../utils/typography';
 
 function Index(props: any) {
-  const { data } = props;
-
   return (
     <Layout location={props.location} title={'JλO'}>
       <SEO
@@ -45,26 +43,24 @@ function Index(props: any) {
 
 export default Index;
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
+  }
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
         }
       }
     }
   }
-`;
+}`;

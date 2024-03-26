@@ -80,7 +80,14 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-feed',
+    'gatsby-plugin-image',
+    // {
+    //   resolve: 'gatsby-plugin-feed',
+    //   options: {
+
+    //   }
+    // },
+    'gatsby-plugin-fix-fouc',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

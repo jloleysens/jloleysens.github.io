@@ -40,29 +40,27 @@ function Music(props: any) {
 
 export default Music;
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`{
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//music//" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
+  }
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "//music//"}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
         }
       }
     }
   }
-`;
+}`;
