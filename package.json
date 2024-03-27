@@ -4,6 +4,18 @@
   "description": "JLO's blog",
   "version": "1.0.0",
   "author": "Jean-Louis Leysens <jloleysens@gmail.com>",
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css}",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "yarn build && gh-pages --dist public --branch master",
+    "pgp-sign": "./scripts/pgp-sign",
+    "sign-all": "./scripts/sign-all"
+  },
   "dependencies": {
     "gatsby": "^5.13.3",
     "gatsby-plugin-cname": "^1.0.0",
@@ -45,17 +57,5 @@
     "prettier": "^3.2.5",
     "ts-node": "10.9.2",
     "typescript": "5.4.3"
-  },
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css}",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "yarn build && gh-pages --dist public --branch master",
-    "pgp-sign": "./scripts/pgp-sign",
-    "sign-all": "./scripts/sign-all"
   }
 }
