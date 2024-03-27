@@ -25,7 +25,7 @@ const myFunction1 = resource => {
 };
 ```
 
-My initial conclusion was that nested try-catch blocks are a blight on the earth. However, I now know that you are far more likely to encounter code like 👆🏻 in any serious software application's code than _anything_ like this:
+My initial conclusion was that nested try-catch blocks are a blight on the earth and that we should avoid it all costs to make things simpler... However, I now know that you are far more likely to encounter code like 👆🏻 in any serious software application's code than _anything_ like this:
 
 ```typescript
 const myFunction1 = (resource: string) => {
@@ -61,7 +61,7 @@ And there are several reasons for it:
 1. Most useful non-trivial software systems are developed and maintained in collaboration with other developers (a.k.a humans). They will have spent hundreds or thousands of hours reading code that is far closer in presentation to the first snippet than the latter. This means they can understand it, debug it, and contribute to future iterations with confidence.
 2. The first snippet is objectively simpler. There are fewer concepts to understand (i.e. accessible for beginners and experts).
 3. The second snippet is following strong FP practices. I wrote <a href="/code/fp-in-js/">a post</a> a while ago about why we should avoid strong FP practices in JavaScript.
-4. Kind of related to point (1), given that most code fellow humans work on and need to grok will not be in this paradigm it's unlikely that you will have the opportunity to even get code like past review.
+4. Kind of related to point (1), given that most code fellow humans work on and need to grok will not be in this paradigm it's unlikely that you will have the opportunity to even get code in snippet 2 past review.
 5. ...and, yes, least importantly, the first snippet is probably more performant.
 
 So... should I delete my original post? I don't think so.
