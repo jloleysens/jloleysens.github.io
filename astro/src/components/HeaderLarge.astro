@@ -1,0 +1,48 @@
+---
+import {Image} from 'astro:assets';
+import localJlo from '../images/profile-pic.jpg'
+---
+
+<header class="top-nav">
+  <h1>
+    <a href="/">J<span class="special-char">λ</span>O</a>
+  </h1>
+  <div class="hero-image">
+    <Image src={localJlo} alt="Jean-Louis Leysens" loading="eager" />
+  </div>
+</header>
+
+<style>
+  .special-char {
+    font-family: sans-serif;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 0,
+    margin-bottom: 0,
+  }
+  header {
+    font-family: 'Fira Mono', monospace;
+    /* max-height: 5rem; */
+    padding-top: 6rem;
+    border-bottom: 1px solid grey;
+    background: linear-gradient(45deg, var(--a-dark), var(--c-dark-cold-grey), var(--a-cold));
+    display: grid;
+    place-content: center;
+    row-gap: 1rem;
+    & a {
+      color: var(--text-reverse);
+      text-decoration: none;
+    }
+  }
+  .hero-image {
+    display: grid;
+    place-content: center;
+    img {
+      width: 3rem;
+      border-radius: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+</style>

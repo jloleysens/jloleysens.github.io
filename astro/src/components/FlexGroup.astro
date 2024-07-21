@@ -1,0 +1,20 @@
+---
+interface Props {
+  direction?: 'row' | 'column';
+  alignItems?: 'flex-start' | 'center' | 'flex-end';
+}
+
+const {direction = 'row', alignItems = 'center'} = Astro.props;
+---
+
+<div class="flex-group">
+  <slot />
+</div>
+<style define:vars={{ direction: direction, alignItems: alignItems }}>
+  .flex-group {
+    display: flex;
+    direction: var(--direction);
+    align-items: var(--alignItems);
+  }
+</style>
+
