@@ -52,11 +52,12 @@
   --c-light-1: #d9dbf1;
   --c-light: #f7f7ff;
 
-
+  /* Default theme setup... */
 	--background: var(--a-light);
 	--text: var(--a-dark);
 	--text-reverse: var(--a-light);
 	--link: var(--c-cool);
+	--linkHover: var(--a-warm-1);
 }
 
 /* CSS-reset */
@@ -75,6 +76,7 @@
 html {
   color-scheme: dark light;
   hanging-punctuation: first last;
+	font-size: 20px;
 }
 
 body {
@@ -88,8 +90,23 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--text);
-	font-size: 20px;
 	line-height: 1.7;
+
+	& a {
+		color: var(--link);
+		transition: color 0.2s ease-in-out;
+		text-decoration: none;
+	}
+
+	& svg {
+		color: var(--text);
+	}
+
+	& a:hover,
+	& svg:hover > path {
+		color: var(--linkHover);
+		transition: color 0.2s ease-in-out;
+	}
 }
 main {
 	width: 720px;
@@ -201,4 +218,9 @@ blockquote {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+
+:where(.font-size-small) {
+	font-size: .8rem;
 }

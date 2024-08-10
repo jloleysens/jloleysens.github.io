@@ -24,7 +24,7 @@ import localJlo from '../images/profile-pic.jpg'
   header {
     font-family: 'Fira Mono', monospace;
     /* max-height: 5rem; */
-    padding-top: 6rem;
+    padding-top: 5rem;
     border-bottom: 1px solid grey;
     background: linear-gradient(45deg, var(--a-dark), var(--c-dark-cold-grey), var(--a-cold));
     display: grid;
@@ -39,10 +39,12 @@ import localJlo from '../images/profile-pic.jpg'
     display: grid;
     place-content: center;
     img {
-      width: 3rem;
-      border-radius: 100%;
+      --image-size: 5rem;
+      width: var(--image-size);
       aspect-ratio: 1 / 1;
+      border-radius: 100%;
       object-fit: cover;
+      margin-bottom: calc(-1 * var(--image-size) / 2);
     }
   }
 </style>
