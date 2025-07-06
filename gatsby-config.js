@@ -3,7 +3,7 @@ module.exports = {
     title: 'Jean-Louis Leysens',
     author: 'Jean-Louis Leysens',
     description: "Jean-Louis Leysens' blog",
-    siteUrl: 'https://sombrerob.ro/',
+    siteUrl: 'https://jloleysens.github.io',
     social: {
       twitter: 'JLo616',
     },
