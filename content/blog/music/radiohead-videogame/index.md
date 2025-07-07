@@ -9,10 +9,10 @@ Radiohead albums among a number of gems from other albums and EPs. Although I am
 their music has stuck with me for 20+ years. I've tried to analyse and assimilate the ideas in their music
 to my experience at different points in my life but for whatever reason I felt
 the urge to write down my thoughts on the final track "Videotape" from
-"In Rainbows" today -- about 18 years after its release.
+"In Rainbows" today -- about 18 years after it's release.
 
 "Videotape" with it's haunting piano refrain always captivated me. The song has a
-complex composition yet simple execution. Using the addition of layers to build its tortured crescendo.
+complex composition yet simple execution. Using the addition of layers to build it's tortured crescendo.
 It's a melancholy _sounding_ song to be sure. The lyrics, which I intend to analyse in this post, push this sense of melancholy
 to a fever-pitch of loss and disassociation. The beautiful rawness of the music
 speaks to a present (or future?) tragedy.
