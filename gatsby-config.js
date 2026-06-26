@@ -40,6 +40,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/content/blog/philosophy`,
+        name: 'blog-philosophy',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         path: `${__dirname}/content/assets`,
         name: 'assets',
       },

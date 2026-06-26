@@ -57,6 +57,9 @@ typings/
 # gatsby files
 .cache/
 public
+.config/
+.npm-cache/
+.yarn-cache/
 
 # Mac files
 .DS_Store
