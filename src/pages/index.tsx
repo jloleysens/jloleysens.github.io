@@ -15,7 +15,6 @@ function Index(props: any) {
           'music',
           'punk',
           'post-metal',
-          'philosophy',
           'typescript',
           'functional programming',
         ]}
@@ -25,7 +24,6 @@ function Index(props: any) {
         { name: 'Programming', slug: '/code' },
         { name: 'Music', slug: '/music' },
         { name: 'Video Games', slug: '/video-games' },
-        { name: 'Philosophy', slug: '/philosophy' },
       ].map(thing => {
         return (
           <h3

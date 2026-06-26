@@ -41,3 +41,7 @@ for different shades of a color.
   --c-light-1: #d9dbf1;
   --c-light: #f7f7ff;
 }
+
+::selection {
+  background:  hsla(274, 62%, 80%, 0.68);
+}

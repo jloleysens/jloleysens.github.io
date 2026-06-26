@@ -62,7 +62,6 @@ exports.createPages = ({ graphql, actions }) => {
     categoryBlogCreator('code', graphql, createPage),
     categoryBlogCreator('music', graphql, createPage),
     categoryBlogCreator('video-games', graphql, createPage),
-    categoryBlogCreator('philosophy', graphql, createPage),
   ]);
 };
 
@@ -82,8 +81,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       ? `/music${maybePathTailSection}`
       : node.fileAbsolutePath.includes('/video-games/')
       ? `/video-games${maybePathTailSection}`
-      : node.fileAbsolutePath.includes('/philosophy/')
-      ? `/philosophy${maybePathTailSection}`
       : maybePathTailSection;
 
     createNodeField({
