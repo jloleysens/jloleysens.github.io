@@ -8,8 +8,7 @@ function Bio() {
     <FlexGroup direction="column" style={{ marginBottom: rhythm(2.5), }} >
       <FlexItem>
         <p>
-          Hi, I'm <strong>Jean-Louis Leysens</strong>. I like writing software in
-          JavaScript and TypeScript and listening to noisey music.
+          Hi, I'm <strong>Jean-Louis Leysens</strong>. I like writing software and listening to noisey music.
         </p>
       </FlexItem>
       <FlexItem>
