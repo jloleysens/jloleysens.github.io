@@ -12,7 +12,7 @@
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css}",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "yarn build && gh-pages --dist public --branch master",
+    "deploy": "yarn build && rm -f public/CNAME && gh-pages --dist public --branch master --nojekyll",
     "pgp-sign": "./scripts/pgp-sign",
     "sign-all": "./scripts/sign-all"
   },

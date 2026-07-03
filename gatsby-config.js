@@ -15,7 +15,6 @@ module.exports = {
         trackingId: 'UA-65971085-2',
       },
     },
-    'gatsby-plugin-cname',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
