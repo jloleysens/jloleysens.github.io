@@ -21,7 +21,7 @@ So... Is music more like a pair of shoes? We go into a shoe shop and pick what w
 
 The music industry of the late 20th century showed that music _can_ be a commodity. In [this video](https://youtu.be/sjJrR1OdAIg?si=gy859FP8cAg-iy9U), Rick Beato talks about the "mechanization" of music production. It got me thinking about what happens when music made to a formula becomes training data. A lot of AI music sounds like a dozen songs you've already heard in that genre, familiar formulas regurgitated a number of times approaching infinity. And guess what, people have been doing that for decades, long before AI! Because it works and makes money.
 
-Here's where I'd push back: I think you can treat music like shoes up to a point. When music is art, I think it's about communication.<sup>2</sup> Does it matter to me that someone _meant_ to say _this_ through a piece of music? An emphatic _yes_. It affects what I do with the message. Keep or dismiss. The artist's intention gives the music its particular stamp.
+Here's where I'd push back: I think you can treat music like shoes up to a point. When music is art, I think it's about communication.<sup>2</sup> Does it matter to me that someone _meant_ to say _this_ through a piece of music? An emphatic _yes_. It affects what I do with the message. Keep or dismiss.
 
 Even more than this: the more a piece is _suffused_ with an artist's intention, the more deeply it can resonate in this way. It can bring back a memory, let you share in someone else's feelings, or help you make sense of your own. That's part of what makes music feel like art to me. There is a relationship between depth and intentionality. Intention is ultimately what makes music _soulful_.
 
